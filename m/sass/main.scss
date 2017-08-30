@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// Imports and variables
+@import "variables";
+@import "helpers";
+@import "header";
+@import "wp";
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  @media($desktop) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  &.menu-active {
+    overflow: hidden;
+    padding-top: $topbar-height;
+  }
+}
+
+
+ul {
+  margin: 0;
+}
+
+.wrap {
+  @extend %clearfix;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+  &--sm {
+    max-width: 600px;
+  }
+}
