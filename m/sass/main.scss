@@ -3,8 +3,11 @@
 // Imports and variables
 @import "variables";
 @import "helpers";
-@import "header";
+@import "grid";
 @import "wp";
+@import "hero";
+@import "header";
+@import "footer";
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -13,9 +16,10 @@
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Assistant', sans-serif;
-  font-size: 14px;
-  font-weight: normal;
+  font-family: "Assistant", sans-serif;
+  color: #3d3d3b;
+  font-size: 15px;
+  font-weight: 300;
   line-height: 18px;
   @media($desktop) {
     font-size: 16px;
@@ -38,10 +42,38 @@ ul {
 
 .wrap {
   @extend %clearfix;
-  max-width: 980px;
+  max-width: $max-width;
   margin: 0 auto;
   padding: 0 20px;
   &--sm {
     max-width: 600px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 30px;
+  color: #3d3d3b;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.main {
+  padding: $padding-default 0;
+
+  li {
+    list-style: none;
+    &:before {
+      display: inline-block;
+      width: 20px;
+      height: 5px;
+      background: #8acfe1;
+      content: "";
+      margin-left: -41px;
+      margin-right: 18px;
+    }
   }
 }

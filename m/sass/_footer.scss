@@ -1,0 +1,20 @@
+.footer {
+  padding: $padding-default 0;
+  background-color: $color-main;
+  color: $color-links;
+  font-size: 12px;
+  line-height: 13px;
+
+  &__col-1{
+      display: none;
+      @media($desktop) {
+          display: block;
+      }
+  }
+
+  &__right {
+    @media($desktop) {
+      text-align: right;
+    }
+  }
+}
