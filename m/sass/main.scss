@@ -48,6 +48,9 @@ ul {
   &--sm {
     max-width: 600px;
   }
+  @media(min-width: 1000px){
+    padding: 0;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,6 +66,10 @@ h1 {
 
 .main {
   padding: $padding-default 0;
+
+  @media($desktop){
+    padding: $padding-default-desktop 0;
+  }
 
   li {
     list-style: none;
