@@ -1,0 +1,41 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}} page-front" data-template="front-page.twig" >
+
+          <div class="front__overlay" style="background-image: url('{{post.thumbnail.src|resize(1400)}}')"></div>
+
+        <header class="header header--transparent">
+            {% block header %}
+                <div class="header__wrap">
+                    <a rel="home" class="header__logo-link" href="{{site.url}}">
+                        <span>{{site.name}}</span>
+                    </a>
+                </div>
+            {% endblock %}
+        </header>
+
+        <div class="wrap">
+            <ul class="front__menu">
+                {% for item in menu.get_items %}
+            		<li class="front__menu-item {{ item.classes | join(' ') }}">
+            			<a class="front__menu-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+            		</li>
+            	{% endfor %}
+				<div class="front__langs">
+					{{langs}}
+				</div>
+            </ul>
+        </div>
+
+        <div class="footer-abs">
+            {% include 'footer.twig' %}
+        </div>
+
+	</body>
+</html>

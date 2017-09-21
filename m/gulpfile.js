@@ -8,10 +8,11 @@ var browserSync = require('browser-sync').create()
 gulp.task('sass', function () {
   return gulp.src('./sass/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer('last 3 versions'))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('../site/wp-content/themes/newlook/static/css'))
     .pipe(browserSync.stream())
 })
 

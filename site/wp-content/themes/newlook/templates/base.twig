@@ -1,0 +1,36 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+        <header class="header">
+            {% block header %}
+                <div class="header__wrap">
+                    <a rel="home" class="header__logo-link" href="{{site.url}}">
+                        <span>{{site.name}}</span>
+                    </a>
+                    <nav id="nav-main" class="nav" role="navigation">
+                        {% include "menu.twig" with {'menu': menu.get_items} %}
+                    </nav><!-- #nav -->
+                </div>
+
+                <div class="hamburger-menu js-menu">
+                    <div class="bar js-toggle-menu"></div>
+                </div>
+            {% endblock %}
+        </header>
+
+		{% block content %}
+		{% endblock %}
+
+    {% block footer %}
+        {% include 'footer.twig' %}
+    {% endblock %}
+
+	</body>
+</html>

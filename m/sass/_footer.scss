@@ -17,4 +17,19 @@
       text-align: right;
     }
   }
+
+}
+
+
+.footer-abs{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  background-color: transparent;
+  .footer{
+    background: transparent;
+    background-color: transparent;
+  }
 }

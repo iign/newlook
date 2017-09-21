@@ -1,0 +1,124 @@
+.prod{
+
+  $width-content: 240px;
+
+  &__title{
+    font-size: 30px;
+    color: #3d3d3b;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: $padding-default;
+    @media($desktop){
+      display: none;
+    }
+  }
+
+  &__list{
+    list-style: none;
+    margin-left: -$padding-default;
+    margin-right: -$padding-default;
+    padding-left: 0;
+    position: relative;
+
+    @media($desktop){
+      background: white;
+      display: inline-block;
+      width: $width-content;
+      margin: 0;
+      padding: 20px 0;
+      margin-bottom: 20px;
+    }
+
+    &.active{
+      .prod__list-item{
+        max-height: 999px;
+      }
+    }
+
+    &:after{
+      display: block;
+      position: absolute;
+      right: $padding-default;
+      top: 9px;
+      content: " ";
+      width: 20px;
+      height: 14px;
+      background-size: contain;
+      background-image: url(../img/icon-chevron.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      @media($desktop){
+        display: none;
+      }
+    }
+  }
+
+  &__list-item{
+    max-height: 0;
+    overflow: hidden;
+
+    @media($desktop){
+      max-height: 999px;
+      background: white;
+      padding: 0 15px;
+    }
+
+    &--active{
+      max-height: 999px;
+      background-color: $color-links;
+      color: $color-main;
+    }
+    @media($desktop){
+      &:hover{
+        background-color: $color-links;
+        color: $color-main;
+      }
+    }
+    &:before{
+      display: none;
+    }
+  }
+
+  &__list-link{
+    padding: 6px $padding-default;
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    color: #00335c;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__back-wrap{
+    display: block;
+    margin-left: -$padding-default;
+    margin-right: -$padding-default;
+    @media($desktop){
+      display: none;
+    }
+  }
+
+  &__back{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+  }
+
+  &__body{
+    padding-top: $padding-default;
+    p{
+      margin-top: 0;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    @media($desktop){
+      font-size: 13px;
+      width: $width-content;
+      background: white;
+      position: relative;
+      padding: 30px;
+    }
+  }
+}

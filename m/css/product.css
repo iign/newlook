@@ -1,0 +1,15 @@
+.prod__title {
+  font-size: 30px;
+  color: #3d3d3b;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prod__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=product.css.map */

@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="page-product">
+    <main class="main">
+      <div class="main-bg" style="background-image: url('{{post.thumbnail.src|resize(1400)}}')"></div>
+        <div class="wrap">
+          <h2 class="prod__title">Productos</h2>
+            <ul class="prod__list">
+                {% for p in products %}
+                    <li class="prod__list-item {% if post.post_title == p.title %}prod__list-item--active{% endif %}">
+                      <a class="prod__list-link" href="{{p.link}}">{{p.title}}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -83,6 +83,18 @@ $bar-spacing: 8px;
   z-index: 100;
   transition: 200ms;
 
+  @media ($desktop) {
+    overflow: visible;
+    height: 80px;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
+
+  &--transparent{
+    background: transparent;
+    background-color: transparent;
+  }
+
   &__wrap {
     @extend %clearfix;
     margin: 0 auto;
@@ -96,13 +108,6 @@ $bar-spacing: 8px;
   .menu-active & {
     background-color: $color-secondary;
     position: absolute;
-  }
-
-  @media ($desktop) {
-    overflow: visible;
-    height: 110px;
-    margin: 0 auto;
-    padding-top: 40px;
   }
 
   &__logo-link {
