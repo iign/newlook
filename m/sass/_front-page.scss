@@ -11,6 +11,9 @@
   .header{
     pointer-events: none;
     z-index: 10;
+    @media($desktop){
+      pointer-events: all;
+    }
   }
 
   .lang-item {
@@ -19,6 +22,10 @@
     margin-right: 15px;
     font-size: 20px;
     line-height: 1;
+
+    &:last-child{
+      margin-right: 0;
+    }
     a {
       color: $color-links;
     }
@@ -41,6 +48,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
+    z-index: 1;
+    // pointer-events: none;
   }
 
   &__menu {
@@ -70,8 +79,17 @@
     z-index: 90;
     @media($desktop) {
       position: fixed;
-      top: $padding-default;
-      right: $padding-default;
+      top: 10px;
+      pointer-events: none;
+      z-index: 10;
+      left: 0;
+      width: 100%;
+
+      .wrap-langs{
+        max-width: 990px;
+        margin: 0 auto;
+        text-align: right;
+      }
     }
   }
 }

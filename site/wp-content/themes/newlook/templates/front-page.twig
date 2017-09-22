@@ -8,8 +8,6 @@
 
 	<body class="{{body_class}} page-front" data-template="front-page.twig" >
 
-          <div class="front__overlay" style="background-image: url('{{post.thumbnail.src|resize(1400)}}')"></div>
-
         <header class="header header--transparent">
             {% block header %}
                 <div class="header__wrap">
@@ -28,7 +26,9 @@
             		</li>
             	{% endfor %}
 				<div class="front__langs">
-					{{langs}}
+					<div class="wrap-langs">
+						{{langs}}
+					</div>
 				</div>
             </ul>
         </div>
@@ -37,5 +37,6 @@
             {% include 'footer.twig' %}
         </div>
 
+        <div class="front__overlay" style="background-image: url('{{post.thumbnail.src|resize(1400)}}')"></div>
 	</body>
 </html>

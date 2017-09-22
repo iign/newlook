@@ -116,12 +116,14 @@ $bar-spacing: 8px;
     width: 142px;
     height: 20px;
     position: relative;
+    cursor: pointer;
     z-index: 100;
     @media ($desktop) {
       width: 206px;
       float: left;
       margin: 0;
       height: 30px;
+      z-index: 90;
     }
 
     span {

@@ -81,8 +81,10 @@ class StarterSite extends TimberSite
 		foreach ($languages as $key => $lang) {
 			$langs .= "<li class='lang-item nav__item'>
 					    <a class='nav__link' href='{$lang['url']}'>{$lang['name']}</a>
-				      </li>";
+				      </li>
+                      ";
 		}
+
 		$context['langs'] = $langs;
 
         $context['current_lang'] = pll_current_language();
