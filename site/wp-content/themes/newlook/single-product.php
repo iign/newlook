@@ -19,4 +19,4 @@ $args = array(
             );
 $context['products'] = Timber::get_posts($args);
 
-Timber::render(array( 'page-productos.twig', 'page.twig' ), $context);
+Timber::render(array( 'single-product.twig', 'page.twig' ), $context);

@@ -4,11 +4,14 @@ $bar-spacing: 8px;
 
 .hamburger-menu {
   position: absolute;
-  top: ($topbar-height - ($bar-height + $bar-spacing * 2)) / 2;
-  right: 20px;
+  right: 0;
+  top: 0;
   margin: auto;
-  width: $bar-width;
-  height: $bar-height + $bar-spacing*2;
+  width: auto;
+  height: $topbar-height;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: ($topbar-height - ($bar-height + $bar-spacing * 2)) / 2;
   cursor: pointer;
   z-index: 100;
   @media ($desktop) {

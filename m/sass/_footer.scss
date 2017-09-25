@@ -4,6 +4,7 @@
   color: $color-links;
   font-size: 12px;
   line-height: 13px;
+  position: relative;
 
   &__col-1{
       display: none;
@@ -28,6 +29,7 @@
   left: 0;
   background: transparent;
   background-color: transparent;
+  z-index: 99;
   .footer{
     background: transparent;
     background-color: transparent;

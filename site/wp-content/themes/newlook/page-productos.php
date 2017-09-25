@@ -16,6 +16,12 @@ $args = array(
                 'order' => 'ASC' ,
                 'posts_per_page' => -1
             );
-$context['products'] = Timber::get_posts($args);
+$products = Timber::get_posts($args);
+$context['products'] = $products;
 
-Timber::render(array( 'page-productos.twig', 'page.twig' ), $context);
+$prod = $products[0];
+
+// Redirect to first product.
+header("Location: {$prod->link}");
+
+//Timber::render(array( 'page-productos.twig', 'page.twig' ), $context);

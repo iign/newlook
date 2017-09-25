@@ -113,7 +113,6 @@ class StarterSite extends TimberSite
 new StarterSite();
 
 add_action('wp_enqueue_scripts', 'newlook_load_scripts');
-add_action('wp_print_styles', 'newlook_load_styles');
 add_action('after_setup_theme', 'register_my_menu');
 
 function register_my_menu()
@@ -123,12 +122,12 @@ function register_my_menu()
 
 function newlook_load_scripts()
 {
-    wp_enqueue_script('main', get_stylesheet_directory_uri() . '/static/js/app.js', array('jquery'), null, true);
-}
-
-function newlook_load_styles()
-{
     wp_enqueue_style('main', get_stylesheet_directory_uri() . '/static/css/main.css');
+    wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/static/slick/slick.css');
+    wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/static/slick/slick-theme.css');
+
+    wp_enqueue_script('slick', get_stylesheet_directory_uri() . '/static/slick/slick.min.js', array('jquery'), null, true);
+    wp_enqueue_script('app', get_stylesheet_directory_uri() . '/static/js/app.js', array('jquery', 'slick'), null, true);
 }
 
 function cc_mime_types($mimes)

@@ -7,14 +7,21 @@
       <div class="main-bg" style="background-image: url('{{post.thumbnail.src|resize(1400)}}')"></div>
         <div class="wrap">
           <h2 class="prod__title">Productos</h2>
-            <ul class="prod__list">
+            <ul class="prod__list visible">
                 {% for p in products %}
-                    <li class="prod__list-item {% if post.post_title == p.title %}prod__list-item--active{% endif %}">
+                    <li class="prod__list-item visible">
                       <a class="prod__list-link" href="{{p.link}}">{{p.title}}</a>
                     </li>
                 {% endfor %}
-
             </ul>
+            <div class="prod__back-wrap">
+              <img class="prod__back" src="{{post.thumbnail.src|resize(1400)}}" alt="Background">
+            </div>
+            {% if post.content %}
+                <div class="prod__body">
+                  {{post.content}}
+                </div>
+            {% endif %}
 
         </div>
     </main>

@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="page-product">
+    <main class="main">
+
+        {% if post.get_field('images') %}
+            <div class="p-carousel">
+                {% for item in post.get_field('images') %}
+                    <div class="carousel-cell" style="background-image: url('{{TimberImage(item.image).src|resize(1400)}}')"></div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+
+        <div class="wrap">
+          <h2 class="prod__title">Productos</h2>
+            <ul class="prod__list">
+                {% for p in products %}
+                    <li class="prod__list-item {% if post.post_title == p.title %}prod__list-item--active{% endif %}">
+                      <a class="prod__list-link" href="{{p.link}}">{{p.title}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            {% if post.content %}
+                <div class="prod__body">
+                  {{post.content}}
+                </div>
+            {% endif %}
+
+        </div>
+    </main>
+</div>
+{% endblock %}
