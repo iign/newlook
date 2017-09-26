@@ -42,7 +42,5 @@ jQuery(document).ready(function ($) {
       lazyLoad: 'ondemand'
   })
 
-  console.log($slick)
-
 
 })

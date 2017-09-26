@@ -71,6 +71,13 @@
     a {
       color: white;
       text-decoration: none;
+      transition: 200ms;
+      &:hover{
+        @media($desktop){
+          transition: 200ms;
+          color: $color-links;
+        }
+      }
     }
   }
 

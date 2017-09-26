@@ -5,16 +5,6 @@
 <div class="page-product">
     <main class="main">
 
-        {% if post.get_field('images') %}
-            <div class="p-carousel">
-                {% for item in post.get_field('images') %}
-                    <div class="carousel-cell" style="background-image: url('{{TimberImage(item.image).src|resize(1400)}}')"></div>
-                {% endfor %}
-            </div>
-        {% endif %}
-
-
-
         <div class="wrap">
           <h2 class="prod__title">Productos</h2>
             <ul class="prod__list">
@@ -24,6 +14,14 @@
                     </li>
                 {% endfor %}
             </ul>
+
+            {% if post.get_field('images') %}
+                <div class="p-carousel">
+                    {% for item in post.get_field('images') %}
+                        <div class="carousel-cell" style="background-image: url('{{TimberImage(item.image).src|resize(1400, 930)}}')"></div>
+                    {% endfor %}
+                </div>
+            {% endif %}
 
             {% if post.content %}
                 <div class="prod__body">

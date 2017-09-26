@@ -103,16 +103,20 @@ h1 {
 }
 
 .p-carousel, .slick-slider{
-  display: none !important;
-  position: absolute !important;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100% !important;
+  margin-left: -$padding-default;
+  margin-right: -$padding-default;
 
   @media($desktop) {
+    position: absolute !important;
     display: block;
+    width: 100% !important;
     position: absolute;
+    height: 100% !important;
+    margin: 0;
   }
 
   .slick-track, .slick-list{
@@ -124,7 +128,16 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
+    height: auto;
+    @include aspect-ratio(1400, 933);
+
+    @media($desktop){
+      height: 100% !important;
+      &:before{
+        display: none;
+        padding: 0;
+      }
+    }
   }
 }
 
