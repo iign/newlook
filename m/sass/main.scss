@@ -145,7 +145,7 @@ h1 {
   li {
     list-style: none;
     margin-bottom: 12px;
-    
+
     &:before {
       display: inline-block;
       width: 20px;
@@ -159,6 +159,7 @@ h1 {
 
   img{
     max-width: 100%;
+    height: auto;
   }
 }
 
