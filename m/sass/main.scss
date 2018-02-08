@@ -39,6 +39,18 @@ body {
   }
 }
 
+::-webkit-input-placeholder {
+  font-family: "Assistant", sans-serif;
+}
+::-moz-placeholder {
+  font-family: "Assistant", sans-serif;
+}
+:-ms-input-placeholder {
+  font-family: "Assistant", sans-serif;
+}
+:-moz-placeholder {
+  font-family: "Assistant", sans-serif;
+}
 
 ul {
   margin: 0;
@@ -73,6 +85,11 @@ h1 {
   position: relative;
   overflow-x: hidden;
   background: white;
+
+  a, a:visited, a:link{
+    color: $color-main;
+    text-decoration: none;
+  }
 
   @media($desktop) {
     padding: $padding-default-desktop 0;
@@ -200,10 +217,6 @@ h1 {
     border: none;
   }
 
-  input[type="text"], input[type="email"]{
-
-  }
-
   textarea{
     resize: vertical;
     display: block;
@@ -217,6 +230,16 @@ h1 {
     padding: 10px 15px;
     width: 100%;
     text-transform: uppercase;
+    transition: 300ms ease;
+
+    &:hover{
+      @media($desktop){
+        transition: 300ms ease;
+        background-color: $color-links;
+        color: $color-main;
+      }
+    }
+
     @media($desktop){
       float: right;
       width: auto;
