@@ -132,4 +132,58 @@
       padding: 30px;
     }
   }
+
+  &__buttons{
+    position: absolute;
+    right: 10px;
+    bottom: -40px;
+    z-index: 10;
+
+    @media($desktop) {
+      top: 0;
+      right: -80px;
+      left: auto;
+      bottom: auto;
+    }
+  }
+
+  &__btn{
+    background: white;
+    color: #00335c;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+
+    cursor: pointer;
+
+    background-size: 10px;
+    background-image: url(../img/icon-chevron-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: 200ms;
+
+    @media($desktop){
+      &:hover{
+        background-color: $color-links;
+      }
+
+      &:active{
+        background-color: $color-secondary
+      }
+    }
+
+    &--right{
+      background-image: url(../img/icon-chevron-right.svg);
+    }
+
+    &:last-of-type{
+      margin-left: 10px;
+    }
+  }
 }

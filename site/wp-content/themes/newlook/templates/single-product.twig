@@ -12,7 +12,12 @@
                     <li class="prod__list-item {% if post.post_title == p.title %}prod__list-item--active{% endif %}">
                       <a class="prod__list-link" href="{{p.link}}">{{p.title}}</a>
                     </li>
+                    <li class="prod__buttons">
+                        <span class="prod__btn prod__btn--left js-slick-btn-prev"></span>
+                        <span class="prod__btn prod__btn--right js-slick-btn-next"></span>
+                      </li>
                 {% endfor %}
+
             </ul>
 
             {% if post.get_field('images') %}

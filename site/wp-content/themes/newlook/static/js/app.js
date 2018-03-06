@@ -1,4 +1,4 @@
-/* global $, google */ ;
+/* global $, google, jQuery */ ;
 jQuery(document).ready(function ($) {
   function toggleMenu () {
     $('.js-toggle-menu').toggleClass('animate')
@@ -6,16 +6,14 @@ jQuery(document).ready(function ($) {
     $('body').toggleClass('menu-active')
   }
 
-
-  if (window.location.pathname.split( '/' ).indexOf('product') > 0) {
-    $(".nav__item").each(function( index ) {
-      $a = $(this).find('.nav__link')
+  if (window.location.pathname.split('/').indexOf('product') > 0) {
+    $('.nav__item').each(function (index) {
+      var $a = $(this).find('.nav__link')
       if ($a.text() === 'Productos' || $a.text() === 'Produtos' || $a.text() === 'Products') {
-          $(this).addClass('current-menu-item')
+        $(this).addClass('current-menu-item')
       }
     })
   }
-
 
   $('.js-menu').on('click', function (e) {
     toggleMenu()
@@ -28,19 +26,27 @@ jQuery(document).ready(function ($) {
     return false
   })
 
-
-  var $slick = $('.p-carousel').slick({
-      dots: false,
-      draggable: false,
-      fade: true,
-      infinite: true,
-      speed: 1000,
-      autoplaySpeed: 4000,
-      autoplay: true,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      lazyLoad: 'ondemand'
+    var $slick = $('.p-carousel').slick({
+    dots: false,
+    draggable: false,
+    fade: true,
+    infinite: true,
+    speed: 400,
+    autoplaySpeed: 4000,
+    autoplay: false,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    lazyLoad: 'ondemand'
   })
 
+
+  $('.js-slick-btn-prev').on('click', function () {
+   console.log('prev')
+   $slick.slick('slickPrev')
+ })
+ $('.js-slick-btn-next').on('click', function () {
+     console.log('next')
+   $slick.slick('slickNext')
+ })
 
 })
