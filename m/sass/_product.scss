@@ -13,6 +13,7 @@
   }
 
   &__list {
+    user-select: none;
     list-style: none;
     margin-left: -$padding-default;
     margin-right: -$padding-default;
@@ -138,6 +139,7 @@
     right: 10px;
     bottom: -40px;
     z-index: 10;
+    user-select: none;
 
     @media($desktop) {
       top: 0;
